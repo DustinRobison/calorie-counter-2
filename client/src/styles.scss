@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+// If need, change your variables before importing Bulma
+// $title-color: #000000;
+
+$panel-list-item-hover-color: #393f7b;
+
+@import "~bulma/bulma.sass";
+
+.main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .main-body {
+    flex: 1;
+  }
+}

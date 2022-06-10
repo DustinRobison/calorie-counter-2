@@ -1,0 +1,10 @@
+[
+    {
+        "functionRoute": "foods",
+        "pluginName": "default-site-plugin",
+        "originalAbsoluteFilePath": "/Users/dustin.robison/personal/calorie-counter-2/src/api/foods.ts",
+        "originalRelativeFilePath": "foods.ts",
+        "relativeCompiledFilePath": "foods.js",
+        "absoluteCompiledFilePath": "/Users/dustin.robison/personal/calorie-counter-2/.cache/functions/foods.js"
+    }
+]
