@@ -1,0 +1,34 @@
+{
+  "name": "calorie-counter-2",
+  "version": "1.0.0",
+  "description": "This app is for personal skill improvement only.",
+  "main": "index.ts",
+  "scripts": {
+    "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
+    "start-client": "cd client && npm start",
+    "start-server": "cd server && npm start",
+    "develop": "concurrently \"npm run develop-client\" \"npm run develop-server\"",
+    "develop-client": "cd client && npm run develop",
+    "develop-server": "cd server && npm run develop",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "(cd server && npm install); (cd client && npm install);",
+    "reset-local-db": "cd server && npm run reset-local-db"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DustinRobison/calorie-counter-2.git"
+  },
+  "author": "dustin robison (dustinrobi@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DustinRobison/calorie-counter-2/issues"
+  },
+  "homepage": "https://github.com/DustinRobison/calorie-counter-2#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.42",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "concurrently": "^7.2.1"
+  }
+}

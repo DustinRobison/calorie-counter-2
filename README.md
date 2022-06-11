@@ -15,3 +15,17 @@ Define work:
 - [ ] feature to add summary data
 - [ ] feature add price to food entry and limit 1000$ per month
 - [ ] feature to filter user foods by date
+
+## Running the app
+
+> The root level uses concurrently to run both server and client with standard npm commands
+
+### Local development
+
+1. Install Dependencies: `npm install`
+2. Initialize/Reset the local db: `npm run reset-local-db`
+3. Start the app in develop mode: `npm run develop`
+
+### Build and run
+
+TODO
