@@ -1,6 +1,8 @@
+import * as dotenv from "dotenv";
 import db from "./src/db";
 import app from "./src/app/app";
-const port = 3000;
+dotenv.config({ path: __dirname + "/../local.env" });
+const port = process.env.SERVER_PORT;
 
 async function assertDatabaseConnectionOk() {
   console.log(`Checking database connection...`);

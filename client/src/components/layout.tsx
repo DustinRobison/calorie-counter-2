@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import LoginModal from "./login-modal";
 
 interface layoutProps {
   children: React.ReactNode;
 }
 
 const Layout = ({ children }: layoutProps) => {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
   return (
     <main className="main-content has-background-light">
       <nav
@@ -29,7 +32,12 @@ const Layout = ({ children }: layoutProps) => {
               <a className="button is-primary">
                 <strong>Sign up</strong>
               </a>
-              <a className="button is-light">Log in</a>
+              <a
+                className="button is-light"
+                onClick={() => setIsLoginOpen(true)}
+              >
+                Log in
+              </a>
             </div>
           </div>
         </div>
@@ -43,6 +51,13 @@ const Layout = ({ children }: layoutProps) => {
           </p>
         </div>
       </footer>
+
+      <LoginModal
+        isOpen={isLoginOpen}
+        onClose={() => {
+          setIsLoginOpen(false);
+        }}
+      />
     </main>
   );
 };

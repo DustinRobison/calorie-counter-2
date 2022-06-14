@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AddFoodModal from "../components/add-food-modal";
 import Layout from "../components/layout";
 import "../styles.scss";
-import { Food } from "@backend/types";
+import { Food } from "@server/src/types";
 
 // markup
 const IndexPage = () => {
