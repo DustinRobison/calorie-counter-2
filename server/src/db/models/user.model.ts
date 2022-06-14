@@ -4,31 +4,41 @@ import {
   Model,
   InferCreationAttributes,
   InferAttributes,
+  CreationOptional,
 } from "sequelize";
 
-// class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
+class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
+  declare id: CreationOptional<string>;
+  declare username: string;
+  declare hashed_password: Blob;
+  declare salt: Blob;
+}
 
-// }
-
-const User = (sequelize: Sequelize) => {
-  sequelize.define("User", {
-    id: {
-      type: DataTypes.UUID,
-      primaryKey: true,
+const Users = (sequelize: Sequelize) => {
+  User.init(
+    {
+      id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+      },
+      username: {
+        type: DataTypes.STRING,
+        unique: true,
+      },
+      hashed_password: {
+        type: DataTypes.BLOB,
+        allowNull: false,
+      },
+      salt: {
+        type: DataTypes.BLOB,
+        allowNull: false,
+      },
     },
-    username: {
-      type: DataTypes.STRING,
-      unique: true,
-    },
-    hashed_password: {
-      type: DataTypes.BLOB,
-      allowNull: false,
-    },
-    salt: {
-      type: DataTypes.BLOB,
-      allowNull: false,
-    },
-  });
+    {
+      sequelize,
+      tableName: "Users",
+    }
+  );
 };
 
-export default User;
+export default Users;

@@ -7,6 +7,6 @@ interface FoodsInput {
 }
 
 export async function getAll(req: Request, res: Response, next: NextFunction) {
-  const foods = await db.models.Food.findAll();
+  const foods = await db.models.Foods.findAll();
   res.status(200).json(foods);
 }

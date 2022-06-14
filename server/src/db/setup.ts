@@ -1,3 +1,4 @@
+// @ts-nocheck
 import db from "./index";
 import { v4 as uuidv4 } from "uuid";
 import crypto from "crypto";
@@ -41,13 +42,19 @@ async function reset() {
 
   await db.models.User.bulkCreate(usersSecured);
 
+  const jackSparrowUser = await db.models.User.findOne({
+    where: {
+      username: "jack-sparrow",
+    },
+  });
+
   await db.models.Food.bulkCreate([
-    { id: uuidv4(), name: "taco", calories: 300, username: "jack-sparrow" },
+    { id: uuidv4(), name: "taco", calories: 300, username: jackSparrowUser.id },
     {
       id: uuidv4(),
       name: "hamburger",
       calories: 600,
-      username: "jack-sparrow",
+      user_id: jackSparrowUser.id,
     },
   ]);
 
